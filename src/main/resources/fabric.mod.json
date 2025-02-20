@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "template",
+  "version": "${version}",
+  "name": "template",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/template/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.example.template.client.TemplateModClient"
+    ],
+    "main": [
+      "dev.example.template.TemplateMod"
+    ]
+  },
+  "mixins": [
+    "template.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "amblekit": ">=1.1.5-1.20.1-beta"
+  }
+}
