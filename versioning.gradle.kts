@@ -3,7 +3,14 @@ fun getCurrentVersion(project: Project): String {
     var branch = System.getenv("GITHUB_REF")
     if (branch != null && branch.startsWith("refs/heads/")) {
         branch = branch.substring("refs/heads/".length)
-        branch = branch.replace("/", "_")
+
+        // remove feat/ prefix
+        if (branch.startsWith("feat/")) {
+            branch = branch.substring("feat/".length)
+        }
+
+        // replace / with -
+        branch = branch.replace("/", "-")
         if (branch == "main" || branch == "release") {
             branch = null
         }
